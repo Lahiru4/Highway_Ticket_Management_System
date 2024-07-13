@@ -4,7 +4,29 @@ server:
 spring:
   application:
     name: api-gateway
+  cloud:
+        gateway:
+          mvc:
+            routes:
+                - id: vehicle-service
+                  uri: lb://vehicle-service
+                  predicates:
+                - Path=/api/v1/vehicle/**
 
+                - id: user-service
+                  uri: lb://user-service
+                  predicates:
+                - Path=/api/v1/user/**
+
+                - id: payment-service
+                  uri: lb://payment-service
+                  predicates:
+                - Path=/api/v1/payment/**
+
+                - id: ticket-service
+                  uri: lb://ticket-service
+                  predicates:
+                - Path=/api/v1/ticket/**
 
 eureka:
   client:
