@@ -1,0 +1,1411 @@
+{
+	"info": {
+		"_postman_id": "04f50bae-c179-4e04-9a96-88a9ae934bc3",
+		"name": "Highway_Ticket_System",
+		"description": "StartFragment\n\n### 🚀 Getting Started\n\n#### Step 1: Send Requests\n\nRESTful APIs allow you to perform CRUD operations using POST, GET, PUT, and DELETE HTTP methods. This collection contains each of these request types. Open each request and click \"Send\" to see what happens.\n\n#### Step 2: View Responses\n\nObserve the response tab for status code (e.g., 200 OK), response time, and size.\n\n#### Step 3: Send New Body Data\n\nUpdate or add new data in the \"Body\" section of the POST request. Typically, Body data is also used in PUT requests.\n\n**Plain Text Example:**\n\n```\njsonCopy code{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### Step 4: Update the Variable\n\nVariables enable you to store and reuse values in Postman. We have created a variable called `base_url` with a sample request URL. Replace it with your API endpoint to customize this collection.\n\n#### Step 5: Add Tests in the \"Scripts\" Tab\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n---\n\n### 💪 Pro Tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more scripts to verify if the API works as expected and execute workflows.\n    \n\n---\n\n### 💡 Related Templates\n\n- **API Testing Basics**\n    \n- **API Documentation**\n    \n- **Authorization Methods**\n    \n\nThis collection focuses on the GET, POST, and UPDATE methods to cover the essential CRUD operations for your Highway Ticket Management System assignment.\n\nEndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28107671"
+	},
+	"item": [
+		{
+			"name": "User Service",
+			"item": [
+				{
+					"name": "Save User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"200034800734\",\r\n    \"name\":\"Kasun\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfully save user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"200034800734\",\r\n    \"name\":\"Kasun\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/user/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 29 Jun 2024 06:08:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"200\",\n    \"message\": \"User saved successfully\",\n    \"content\": {\n        \"id\": \"200034800734\",\n        \"name\": \"Kasun\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/selectedUser/200034800734",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"selectedUser",
+								"200034800734"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfully get user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/user/200034800734",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"200034800734"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 29 Jun 2024 06:10:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"200034800734\",\n    \"name\": \"Kasun\"\n}"
+						},
+						{
+							"name": "When try to get user not registered yet",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/user/selectedUser/200034800737",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"selectedUser",
+										"200034800737"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 02 Jul 2024 08:09:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"500\",\n    \"message\": \"Internal server error\",\n    \"content\": \"Unable to find software.kasunkavinda.user_service.entity.User with id 200034800737\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"200034800734\",\r\n    \"name\":\"Kasun Kavinda\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfully update existing user",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"200034800734\",\r\n    \"name\":\"Kasun Kavinda\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/user/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 29 Jun 2024 06:12:08 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"200\",\n    \"message\": \"User updated successfully\",\n    \"content\": {\n        \"id\": \"200034800734\",\n        \"name\": \"Kasun Kavinda\"\n    }\n}"
+						},
+						{
+							"name": "When try to update user not exist",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"200034800744\",\r\n    \"name\":\"Kasun Kavinda\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/user/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"update"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 02 Jul 2024 08:12:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"500\",\n    \"message\": \"Internal server error\",\n    \"content\": \"Unable to find software.kasunkavinda.user_service.entity.User with id 200034800744\"\n}"
+						}
+					]
+				}
+			],
+			"description": "StartFragment\n\nThe User Service is a critical component of the Highway Ticket Management System, responsible for managing user and owner information. This collection includes various endpoints for user registration, profile updates, and credential verification. Below is a detailed description of the requests in this collection:\n\n#### Endpoints\n\n1. **Register User**\n    \n    - **Method**: POST\n        \n    - **Description**: Register a new user in the system.\n        \n    - jsonCopy code{ \"name\": \"John Doe\", \"email\": \"[john.doe@example.com](https://mailto:john.doe@example.com)\"}\n        \n    - **Expected Response**: 201 Created with the user details.\n        \n2. **Get User by ID**\n    \n    - **Method**: GET\n        \n    - **Description**: Retrieve user details using their unique ID.\n        \n    - **Path Variable**: `id` - The unique identifier of the user.\n        \n    - **Expected Response**: 200 OK with the user details.\n        \n3. **Update User Profile**\n    \n    - **Method**: PUT\n        \n    - **Description**: Update the profile information of an existing user.\n        \n    - jsonCopy code{ \"id\": \"12345\", \"name\": \"John Doe Updated\"}\n        \n    - **Expected Response**: 200 OK with the updated user details.\n        \n4. **Verify Credentials**\n    \n    - **Method**: POST\n        \n    - **Description**: Verify user credentials for login or other authentication purposes.\n        \n    - jsonCopy code{ \"email\": \"[john.doe@example.com](https://mailto:john.doe@example.com)\", \"password\": \"password123\"}\n        \n    - **Expected Response**: 200 OK with a success message or token.\n        \n\n---\n\n### Usage Instructions\n\n1. **Send Requests**: Open each request and click \"Send\" to perform operations such as user registration, fetching user details, updating profiles, and verifying credentials.\n    \n2. **View Responses**: Check the response tab for status code, response time, and response size.\n    \n3. **Update Variables**: Use the `base_url` variable to point to your API endpoint, ensuring requests are directed to the correct server.\n    \n4. **Add Tests**: Write JavaScript tests in the \"Tests\" tab to validate the functionality of each endpoint.\n    \n\nThis collection aims to streamline the process of managing user information, ensuring that all operations related to user management are thoroughly tested and validated."
+		},
+		{
+			"name": "Vehicle Service",
+			"item": [
+				{
+					"name": "Save Vehicle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"ABD-7655\",\r\n    \"type\":\"Three Wheel\",\r\n    \"userId\":\"200034800734\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/vehicle/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"vehicle",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfully save vehicle",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"AAA-7655\",\r\n    \"type\":\"Three Wheel\",\r\n    \"userId\":\"200034800734\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/vehicle/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"vehicle",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 02 Jul 2024 01:54:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"200\",\n    \"message\": \"Vehicle saved successfully\",\n    \"content\": {\n        \"id\": \"AAA-7655\",\n        \"type\": \"Three Wheel\",\n        \"userId\": \"200034800734\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Vehicle",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Successfully get selected vehicle",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/vehicle/selectedVehicle/ABD-7650",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"vehicle",
+										"selectedVehicle",
+										"ABD-7650"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 02 Jul 2024 03:06:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"ABD-7650\",\n    \"type\": \"Three Wheel\",\n    \"userId\": \"200034800734\"\n}"
+						},
+						{
+							"name": "When try to get vehicle that not exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/vehicle/selectedVehicle/ABD-7654",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"vehicle",
+										"selectedVehicle",
+										"ABD-7654"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 02 Jul 2024 08:16:16 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"500\",\n    \"message\": \"Internal server error\",\n    \"content\": \"Unable to find software.kasunkavinda.vehicle_service.entity.Vehicle with id ABD-7654\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Vehicle",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"ABD-7650\",\r\n    \"type\":\"Three Wheel - Tvs King\",\r\n    \"userId\":\"200034800734\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/vehicle/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"vehicle",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfully update vehicle",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"ABD-7650\",\r\n    \"type\":\"Three Wheel - Tvs King\",\r\n    \"userId\":\"200034800734\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/vehicle/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"vehicle",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 02 Jul 2024 03:09:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"200\",\n    \"message\": \"Vehicle updated successfully\",\n    \"content\": {\n        \"id\": \"ABD-7650\",\n        \"type\": \"Three Wheel - Tvs King\",\n        \"userId\": \"200034800734\"\n    }\n}"
+						},
+						{
+							"name": "When try to update vehicle that not exist",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"ABD-7670\",\r\n    \"type\":\"Three Wheel - Tvs King\",\r\n    \"userId\":\"200034800734\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/vehicle/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"vehicle",
+										"update"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 02 Jul 2024 08:17:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"500\",\n    \"message\": \"Internal server error\",\n    \"content\": \"Unable to find software.kasunkavinda.vehicle_service.entity.Vehicle with id ABD-7670\"\n}"
+						}
+					]
+				}
+			],
+			"description": "StartFragment\n\n#### Overview\n\nThe Vehicle Service is a vital part of the Highway Ticket Management System, responsible for managing vehicle operations such as registration, updates, and retrieval of vehicle details. This collection includes various endpoints for handling vehicle-related tasks. Below is a detailed description of the requests in this collection:\n\n#### Endpoints\n\n1. **Register Vehicle**\n    \n    - **Method**: POST\n        \n    - **Description**: Register a new vehicle in the system.\n        \n    - jsonCopy code{ \"id\": \"ABC123\", \"type\": \"12345\", \"userId\": \"200034800734\" }\n        \n    - **Expected Response**: 201 Created with the vehicle details.\n        \n2. **Get Vehicle by ID**\n    \n    - **Method**: GET\n        \n    - **Description**: Retrieve vehicle details using its unique ID.\n        \n    - **Path Variable**: `vehicleId` - The unique identifier of the vehicle.\n        \n    - **Expected Response**: 200 OK with the vehicle details.\n        \n3. **Update Vehicle Details**\n    \n    - **Method**: PUT\n        \n    - **Description**: Update the details of an existing vehicle.\n        \n    - jsonCopy code{ \"id\": \"ABC123\", \"type\": \"12345\", \"userId\": \"20034800734\" }\n        \n    - **Expected Response**: 200 OK with the updated vehicle details.\n        \n\n---\n\n### Usage Instructions\n\n1. **Send Requests**: Open each request and click \"Send\" to perform operations such as vehicle registration, fetching vehicle details, and updating vehicle information.\n    \n2. **View Responses**: Check the response tab for status code, response time, and response size.\n    \n3. **Update Variables**: Use the `base_url` variable to point to your API endpoint, ensuring requests are directed to the correct server.\n    \n4. **Add Tests**: Write JavaScript tests in the \"Tests\" tab to validate the functionality of each endpoint.\n    \n\nThis collection aims to streamline the process of managing vehicle information, ensuring that all operations related to vehicle management are thoroughly tested and validated.\n\nEndFragment"
+		},
+		{
+			"name": "Ticket Service",
+			"item": [
+				{
+					"name": "Save Ticket",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"T001\",\r\n    \"description\":\"Nsk\",\r\n    \"date\":\"2024/05/02\",\r\n    \"time\":\"05.30\",\r\n    \"status\":\"Unpaid\",\r\n    \"vehicleId\":\"ABD-7650\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ticket/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ticket",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfully create ticket",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"T002\",\r\n    \"description\":\"Nsk4\",\r\n    \"date\":\"2024/05/02\",\r\n    \"time\":\"05.30\",\r\n    \"status\":\"Unpaid\",\r\n    \"vehicleId\":\"ABD-7655\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/ticket/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"ticket",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Mon, 01 Jul 2024 13:33:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"200\",\n    \"message\": \"Ticket saved successfully\",\n    \"content\": {\n        \"id\": \"T002\",\n        \"description\": \"Nsk4\",\n        \"date\": \"2024/05/02\",\n        \"time\": \"05.30\",\n        \"status\": \"Unpaid\",\n        \"vehicleId\": \"ABD-7655\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Ticket",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Successfully get selected ticket",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/ticket/T001",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"ticket",
+										"T001"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 02 Jul 2024 03:13:47 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"T001\",\n    \"description\": \"Nsk\",\n    \"date\": \"2024/05/02\",\n    \"time\": \"05.30\",\n    \"status\": \"Paid\",\n    \"vehicleId\": \"ABD-7650\"\n}"
+						},
+						{
+							"name": "When try to get ticket that not exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/ticket/T004",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"ticket",
+										"T004"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 02 Jul 2024 08:20:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"500\",\n    \"message\": \"Internal server error\",\n    \"content\": \"Unable to find software.kasunkavinda.ticket_service.entity.Ticket with id T004\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"T001\",\r\n    \"description\": \"A Three Wheel\",\r\n    \"date\": \"2024/05/02\",\r\n    \"time\": \"05.30\",\r\n    \"status\": \"Paid\",\r\n    \"vehicleId\": \"ABD-7650\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ticket/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ticket",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfully update existing ticket",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"T001\",\r\n    \"description\": \"A Three Wheel\",\r\n    \"date\": \"2024/05/02\",\r\n    \"time\": \"05.30\",\r\n    \"status\": \"Paid\",\r\n    \"vehicleId\": \"ABD-7650\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/ticket/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"ticket",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 02 Jul 2024 04:23:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"200\",\n    \"message\": \"Ticket updated successfully\",\n    \"content\": {\n        \"id\": \"T001\",\n        \"description\": \"A Three Wheel\",\n        \"date\": \"2024/05/02\",\n        \"time\": \"05.30\",\n        \"status\": \"Paid\",\n        \"vehicleId\": \"ABD-7650\"\n    }\n}"
+						},
+						{
+							"name": "When try to update ticket that not exist",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"T004\",\r\n    \"description\": \"A Three Wheel\",\r\n    \"date\": \"2024/05/02\",\r\n    \"time\": \"05.30\",\r\n    \"status\": \"Paid\",\r\n    \"vehicleId\": \"ABD-7650\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/ticket/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"ticket",
+										"update"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 02 Jul 2024 08:21:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"500\",\n    \"message\": \"Internal server error\",\n    \"content\": \"Unable to find software.kasunkavinda.ticket_service.entity.Ticket with id T004\"\n}"
+						}
+					]
+				}
+			],
+			"description": "StartFragment\n\nThe Ticket Service manages the lifecycle of highway tickets within the Highway Ticket Management System. This collection provides endpoints for creating, retrieving, updating, and deleting ticket information.\n\n---\n\n**Endpoints:**\n\n1. **Create Ticket**\n    \n    - **Method:** POST\n        \n    - **Description:** Create a new ticket in the system.\n        \n    - jsonCopy code{ \"id\": \"12345\", \"description\": \"Speeding violation\", \"date\": \"2024-07-02\", \"time\": \"10:30 AM\", \"status\": \"pending\", \"vehicleId\": \"ABC123\"}\n        \n    - **Expected Response:** 201 Created with the created ticket details.\n        \n2. **Get Ticket by ID**\n    \n    - **Method:** GET\n        \n    - **Description:** Retrieve ticket details using its unique ID.\n        \n    - **Path Variable:** ticketId - The unique identifier of the ticket.\n        \n    - **Expected Response:** 200 OK with the ticket details.\n        \n3. **Update Ticket**\n    \n    - **Method:** PUT\n        \n    - **Description:** Update the details of an existing ticket.\n        \n    - jsonCopy code{ \"id\": \"12345\", \"description\": \"Speeding violation (Updated)\", \"date\": \"2024-07-02\", \"time\": \"10:30 AM\", \"status\": \"paid\", \"vehicleId\": \"ABC123\"}\n        \n    - **Expected Response:** 200 OK with the updated ticket details.\n        \n4. **Delete Ticket**\n    \n    - **Method:** DELETE\n        \n    - **Description:** Delete a ticket by its unique ID.\n        \n    - **Path Variable:** ticketId - The unique identifier of the ticket.\n        \n    - **Expected Response:** 204 No Content upon successful deletion.\n        \n\n---\n\n**Usage Instructions:**\n\n1. Ensure the base URL variable (`base_url`) is correctly set to your Ticket Service endpoint.\n    \n2. Execute each request in sequence to interact with the Ticket Service API.\n    \n3. Verify responses in the response tab for status codes and expected payload.\n    \n4. Use scripts in the \"Tests\" tab to automate verification of API responses if required.\n    \n\n---\n\n**Additional Notes:**\n\n- This collection assumes integration with other microservices like Vehicle Service and User Service for complete functionality.\n    \n- Error handling and edge case scenarios should be thoroughly tested to ensure robustness.\n    \n\n---\n\nThis description provides a comprehensive guide for interacting with the Ticket Service API using Postman, covering CRUD operations and essential details for each endpoint.\n\nEndFragment"
+		},
+		{
+			"name": "Payment Service",
+			"item": [
+				{
+					"name": "New Payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"P001\",\r\n    \"amount\":250.00,\r\n    \"userId\":\"200031800734\",\r\n    \"ticket_id\":\"T001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/payment/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfully make payment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"P001\",\r\n    \"amount\":250.00,\r\n    \"userId\":\"200034800734\",\r\n    \"ticket_id\":\"T001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/payment/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"payment",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 02 Jul 2024 01:52:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"200\",\n    \"message\": \"Payment saved successfully\",\n    \"content\": {\n        \"id\": \"P001\",\n        \"amount\": 250,\n        \"userId\": \"200034800734\",\n        \"ticket_id\": \"T001\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Payment",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Successfully get selected Payment",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/payment/P001",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"payment",
+										"P001"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 02 Jul 2024 05:34:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"P001\",\n    \"amount\": 250,\n    \"userId\": \"200034800734\",\n    \"ticket_id\": \"T001\"\n}"
+						},
+						{
+							"name": "When try to get payment that not exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/payment/P005",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"payment",
+										"P005"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 02 Jul 2024 08:24:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"500\",\n    \"message\": \"Internal server error\",\n    \"content\": \"Unable to find software.kasunkavinda.payment_service.entity.Payment with id P005\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Payment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"P001\",\r\n    \"amount\": 5050,\r\n    \"userId\": \"200034800734\",\r\n    \"ticket_id\": \"T001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/payment/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfully update payment details",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"P001\",\r\n    \"amount\": 5050,\r\n    \"userId\": \"200034800734\",\r\n    \"ticket_id\": \"T001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/payment/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"payment",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 02 Jul 2024 07:55:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"200\",\n    \"message\": \"Payment updated successfully\",\n    \"content\": {\n        \"id\": \"P001\",\n        \"amount\": 5050,\n        \"userId\": \"200034800734\",\n        \"ticket_id\": \"T001\"\n    }\n}"
+						},
+						{
+							"name": "When try to get payment that not exist",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"P005\",\r\n    \"amount\": 5050,\r\n    \"userId\": \"200034800734\",\r\n    \"ticket_id\": \"T001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/payment/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"payment",
+										"update"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 02 Jul 2024 08:25:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"500\",\n    \"message\": \"Internal server error\",\n    \"content\": \"Unable to find software.kasunkavinda.payment_service.entity.Payment with id P005\"\n}"
+						}
+					]
+				}
+			],
+			"description": "StartFragment\n\nThe Payment Service manages secure payment processing within the Highway Ticket Management System. This collection provides endpoints for validating payment details, updating ticket statuses upon successful payments, and retrieving payment information.\n\n---\n\n**Endpoints:**\n\n1. **Process Payment**\n    \n    - **Method:** POST\n        \n    - **Description:** Process a payment for a ticket.\n        \n    - jsonCopy code{ \"id\": \"98765\", \"amount\": 50.00, \"userId\": \"user123\", \"ticket_id\": \"12345\"}\n        \n    - **Expected Response:** 201 Created with the payment details.\n        \n2. **Get Payment by ID**\n    \n    - **Method:** GET\n        \n    - **Description:** Retrieve payment details using its unique ID.\n        \n    - **Path Variable:** paymentId - The unique identifier of the payment.\n        \n    - **Expected Response:** 200 OK with the payment details.\n        \n3. **Update Payment**\n    \n    - **Method:** PUT\n        \n    - **Description:** Update the details of an existing payment.\n        \n    - jsonCopy code{ \"id\": \"98765\", \"amount\": 60.00, \"userId\": \"user123\", \"ticket_id\": \"12345\"}\n        \n    - **Expected Response:** 200 OK with the updated payment details.\n        \n4. **Delete Payment**\n    \n    - **Method:** DELETE\n        \n    - **Description:** Delete a payment by its unique ID.\n        \n    - **Path Variable:** paymentId - The unique identifier of the payment.\n        \n    - **Expected Response:** 204 No Content upon successful deletion.\n        \n\n---\n\n**Usage Instructions:**\n\n1. Ensure the base URL variable (`base_url`) is correctly set to your Payment Service endpoint.\n    \n2. Execute each request in sequence to interact with the Payment Service API.\n    \n3. Verify responses in the response tab for status codes and expected payload.\n    \n4. Use scripts in the \"Tests\" tab to automate verification of API responses if required.\n    \n\n---\n\n**Additional Notes:**\n\n- This collection assumes integration with other microservices like Ticket Service and User Service for complete functionality.\n    \n- Secure handling of payment information and error handling should be prioritized for production readiness.\n    \n\nEndFragment"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
